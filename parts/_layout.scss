@@ -1,0 +1,354 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.bg-home {
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.bg-home::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), $cor-principal), url(../imagens/Background.jpg);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.text-main-header {
+    color: $cor-branca;
+    text-align: center;
+
+    h1 {
+        width: 100%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    p {
+        width: 100%;
+        margin: 20px auto;
+        font-size: 1.3em;
+    }
+}
+
+.text-main-header > button {
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    background-color: $cor-vermelhoclaro;
+    border: none;
+    box-shadow: 3px 3px 10px $cor-preta;
+
+    a {
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 1px black;
+        color: $cor-branca;
+    }
+}
+
+.text-main-header > button:hover {
+    animation: scalebutton 1s alternate infinite;
+}
+
+@keyframes scalebutton {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .bg-home::before {
+        background:linear-gradient(to bottom, rgba(6, 18, 30, 0.1), $cor-principal), url(../imagens/Background-phone.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .text-main-header {
+        h1{
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+// About----------
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px 40px 10px;
+    background-color: $cor-principal;
+    overflow: hidden;
+    color: $cor-branca;
+
+    div {
+        flex: 1;
+    }
+
+    img {
+        width: 500px;
+        padding: 10px;
+    }
+}
+
+.text-about {
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .text-about {
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: normal;
+        }
+
+        .text-time {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 513px) {
+    .about {
+        img {
+            width: 400px;
+        }
+    }
+}
+
+// Service----------
+
+.service {
+    background-color: $cor-branca;
+    color: black;
+}
+
+.service-text {
+    margin: 20px 0px;
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3rem;
+        padding: 20px;
+    }
+
+    p {
+        max-width: 770px;
+        text-align: center;
+        font-size: 1.3rem;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+.cut-values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-img {
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    transition: transform 0.6s;
+    margin-bottom: 40px;
+    background-color: $cor-branca;
+    color: black;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.600);
+
+    img {
+        width: 100%;
+    }
+}
+
+.service-img:hover {
+    transform: scale(1.07);
+    border: 3px solid rgba(0, 0, 0, 0.600);
+}
+
+.service-img > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        font-weight: bolder;
+        margin: 20px;
+    }
+
+    button {
+        background-color: $cor-vermelhoclaro;
+        padding: 10px 20px;
+        margin: 10px;
+        color: white;
+        font-weight: bolder;
+        text-shadow: 1px 1px 1px black;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: $cor-vermelhoescuro;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .service-text {
+        padding: 10px;
+        
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .cut-values {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-img {
+        width: 70%;
+    }
+
+    .service-img > div {
+        flex-direction: column;
+
+        p {
+            text-transform: uppercase;
+        }
+
+        button {
+            width: 60%;
+        }
+    }
+}
+
+// Mapa----------
+
+.location {
+    background-color: $cor-branca;
+    text-align: center;
+
+    h1 {
+        padding: 40px;
+    }
+}
+
+// Footer----------
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+
+    i {
+        color: white;
+    }
+}
+
+footer > p > a {
+    color: red;
+    text-decoration: underline;
+}
+
+// Botão Whatsapp----------
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+
+    img {
+        max-width: 55px;
+    }
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.btn-whatsapp > .btn-whats-text {
+    visibility: hidden;
+    position: absolute;
+    width: 170px;
+    top: -10px;
+    left: -160px;
+    padding: 10px;
+    background-color: rgb(51, 46, 46);
+    border: 3px solid rgba(0, 0, 0, 0.700);
+    border-radius: 10px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+.btn-whatsapp:hover .btn-whats-text {
+    visibility: visible;
+    left: 60px;
+    opacity: 1;
+}
+
+@media screen and (max-width: 770px) {
+    .btn-whatsapp {
+        left: 10px;
+
+        img {
+            width: 40px;
+        }
+    }
+}
+
+
+
+
+
